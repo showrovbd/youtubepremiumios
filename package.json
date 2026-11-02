@@ -1,0 +1,17 @@
+{
+  "name": "showrov-youtube-keys",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build:clients": "node cloudflare/build.mjs",
+    "test": "node cloudflare/verify.mjs",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "javascript-obfuscator": "4.1.1",
+    "wrangler": "4.156.1"
+  }
+}

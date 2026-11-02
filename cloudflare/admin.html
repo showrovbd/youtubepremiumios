@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Showrov — YouTube keys</title>
+<style>
+:root{font-family:system-ui,sans-serif;color:#162324;background:#eef3f2}
+body{max-width:840px;margin:0 auto;padding:28px 18px}
+h1{margin-bottom:6px}p{line-height:1.5;color:#465c5d}
+section{background:white;border:1px solid #d6e1df;border-radius:12px;padding:22px;margin:22px 0}
+label{display:block;margin:14px 0 5px;font-weight:600}
+input,textarea,button{box-sizing:border-box;font:inherit;border-radius:7px;padding:12px}
+input,textarea{width:100%;border:1px solid #a4b9b5;background:#fff;color:#162324}
+button{cursor:pointer;background:#086b58;color:white;border:0;margin-top:14px;min-height:44px}
+button:disabled{opacity:.55;cursor:default}
+textarea{overflow-wrap:anywhere}
+.notice{white-space:pre-wrap;overflow-wrap:anywhere}
+.key{padding:16px 0;border-bottom:1px solid #e1e9e7}
+.key p{margin:5px 0;font-size:.92rem}
+.key button{background:#a52c37;margin-top:6px}
+#message[role=alert]{color:#97343c}
+footer{font-size:.85rem;color:#516666}
+a{color:#086b58}
+</style>
+</head>
+<body>
+<h1>Showrov YouTube keys</h1>
+<p>Create an access link for each person. Its key is checked on downloads, updates, and protected script actions.</p>
+<section>
+<h2>Create a key</h2>
+<form id="create">
+<label for="label">Name or label</label>
+<input id="label" name="label" maxlength="80" required placeholder="For example: Rahim">
+<label for="days">Valid for this many days</label>
+<input id="days" name="days" type="number" min="1" max="3650" value="30" required>
+<button type="submit">Create access link</button>
+</form>
+<p id="message" class="notice" aria-live="polite"></p>
+<div id="created" hidden>
+<label for="download">Shadowrocket configuration URL</label>
+<textarea id="download" rows="3" readonly></textarea>
+<button id="copy" type="button">Copy link</button>
+<p>Share this link with its owner. Copy it now: complete keys are not stored and cannot be shown again.</p>
+</div>
+</section>
+<section>
+<h2>Existing keys</h2>
+<button id="refresh" type="button">Refresh list</button>
+<div id="keys" aria-live="polite"></div>
+</section>
+<footer>Revocation stops future downloads and protected script actions. Already applied settings or buffered playback can persist until the app refreshes. <a href="/licenses">Third-party license</a></footer>
+<script>
+const message=document.querySelector("#message");
+function showMessage(text,error=false){
+ message.textContent=text;
+ message.setAttribute("role",error?"alert":"status");
+}
+async function api(path,body){
+ const options={credentials:"same-origin",cache:"no-store"};
+ if(body!==undefined){
+  options.method="POST";
+  options.headers={"Content-Type":"application/json","X-Showrov-Admin":"1"};
+  options.body=JSON.stringify(body);
+ }
+ const response=await fetch(path,options);
+ const data=await response.json();
+ if(!response.ok)throw new Error(data.error||"Request failed.");
+ return data;
+}
+async function refresh(){
+ const data=await api("/admin/keys");
+ const container=document.querySelector("#keys");
+ container.replaceChildren();
+ if(!data.licenses.length){container.textContent="No keys yet.";return;}
+ for(const license of data.licenses){
+  const row=document.createElement("div");
+  row.className="key";
+  const title=document.createElement("strong");
+  title.textContent=license.label;
+  const detail=document.createElement("p");
+  const state=license.revokedAt!==null?"Revoked":license.expiresAt<=Date.now()?"Expired":"Active";
+  detail.textContent=state+" · Expires "+new Date(license.expiresAt).toLocaleString();
+  const button=document.createElement("button");
+  button.type="button";
+  button.textContent="Revoke";
+  button.disabled=license.revokedAt!==null;
+  button.addEventListener("click",async()=>{
+   button.disabled=true;
+   try{await api("/admin/revoke",{id:license.id});showMessage("Key revoked.");await refresh();}
+   catch(error){button.disabled=false;showMessage(error.message,true);}
+  });
+  row.append(title,detail,button);
+  container.append(row);
+ }
+}
+document.querySelector("#create").addEventListener("submit",async event=>{
+ event.preventDefault();
+ const button=event.currentTarget.querySelector("button");
+ button.disabled=true;
+ try{
+  const data=await api("/admin/keys",{
+   label:document.querySelector("#label").value,
+   days:Number(document.querySelector("#days").value)
+  });
+  document.querySelector("#download").value=data.downloadUrl;
+  document.querySelector("#created").hidden=false;
+  showMessage("Access link created.");
+  await refresh();
+ }catch(error){showMessage(error.message,true);}
+ finally{button.disabled=false;}
+});
+document.querySelector("#copy").addEventListener("click",async()=>{
+ const field=document.querySelector("#download");
+ try{await navigator.clipboard.writeText(field.value);showMessage("Link copied.");}
+ catch{field.focus();field.select();showMessage("Select and copy the access link.");}
+});
+document.querySelector("#refresh").addEventListener("click",()=>refresh().catch(error=>showMessage(error.message,true)));
+refresh().catch(error=>showMessage(error.message,true));
+</script>
+</body>
+</html>

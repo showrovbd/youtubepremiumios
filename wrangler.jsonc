@@ -1,0 +1,35 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "showrov-youtube-keys",
+  "main": "cloudflare/worker.js",
+  "compatibility_date": "2025-03-01",
+  "workers_dev": true,
+  "rules": [
+    {
+      "type": "Text",
+      "globs": [
+        "**/*.conf",
+        "**/*.js.txt",
+        "**/*.html",
+        "**/LICENSE"
+      ],
+      "fallthrough": true
+    }
+  ],
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "LICENSES",
+        "class_name": "LicenseRegistry"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": [
+        "LicenseRegistry"
+      ]
+    }
+  ]
+}
