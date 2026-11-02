@@ -26,7 +26,7 @@ a{color:#086b58}
 </head>
 <body>
 <h1>Showrov YouTube keys</h1>
-<p>Create an access link for each person. Its key is checked on downloads, updates, and protected script actions.</p>
+<p>Create an access key for each person to paste into Loon.</p>
 <section>
 <h2>Create a key</h2>
 <form id="create">
@@ -34,14 +34,14 @@ a{color:#086b58}
 <input id="label" name="label" maxlength="80" required placeholder="For example: Rahim">
 <label for="days">Valid for this many days</label>
 <input id="days" name="days" type="number" min="1" max="3650" value="30" required>
-<button type="submit">Create access link</button>
+<button type="submit">Create key</button>
 </form>
 <p id="message" class="notice" aria-live="polite"></p>
 <div id="created" hidden>
-<label for="download">Shadowrocket configuration URL</label>
-<textarea id="download" rows="3" readonly></textarea>
-<button id="copy" type="button">Copy link</button>
-<p>Share this link with its owner. Copy it now: complete keys are not stored and cannot be shown again.</p>
+<label for="access-key">Access key</label>
+<textarea id="access-key" rows="3" readonly></textarea>
+<button id="copy" type="button">Copy key</button>
+<p>Share this key with its owner to paste into Loon’s Access Key field. Copy and save it now: complete keys are not stored and cannot be shown again.</p>
 </div>
 </section>
 <section>
@@ -103,17 +103,17 @@ document.querySelector("#create").addEventListener("submit",async event=>{
    label:document.querySelector("#label").value,
    days:Number(document.querySelector("#days").value)
   });
-  document.querySelector("#download").value=data.downloadUrl;
+  document.querySelector("#access-key").value=data.key;
   document.querySelector("#created").hidden=false;
-  showMessage("Access link created.");
+  showMessage("Access key created.");
   await refresh();
  }catch(error){showMessage(error.message,true);}
  finally{button.disabled=false;}
 });
 document.querySelector("#copy").addEventListener("click",async()=>{
- const field=document.querySelector("#download");
- try{await navigator.clipboard.writeText(field.value);showMessage("Link copied.");}
- catch{field.focus();field.select();showMessage("Select and copy the access link.");}
+ const field=document.querySelector("#access-key");
+ try{await navigator.clipboard.writeText(field.value);showMessage("Key copied.");}
+ catch{field.focus();field.select();showMessage("Select and copy the access key.");}
 });
 document.querySelector("#refresh").addEventListener("click",()=>refresh().catch(error=>showMessage(error.message,true)));
 refresh().catch(error=>showMessage(error.message,true));
