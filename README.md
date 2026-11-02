@@ -1,7 +1,5 @@
 # Showrov YouTube
 
-Maintained by **Showrov**.
-
-For access and support, contact the author.
-
-Third-party notices and licenses are included with the relevant files.
+Author: **Showrov**  
+For access and support, contact the author.  
+Third-party licenses are included with the relevant files.
