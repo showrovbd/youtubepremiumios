@@ -15,6 +15,11 @@ Create a separate key for each person in the key manager and share the generated
 Deployed on 2026-11-02 from source commit `fa18ed67dac0270b46797384445b3d4a69395636` using the Cloudflare API. The SQLite Durable Object and admin secret are configured. Live checks passed for authentication, protected downloads and updates, validation, and revocation of already-downloaded request and response scripts. An iPhone playback test is still required.
 
 Automatic deployment from GitHub is not connected. Repository changes must be deployed to the Worker before clients receive them. The instructions below can configure deployment through Cloudflare Workers Builds.
+## Server processing preview
+
+The server-processing-preview branch also contains an optional Worker that keeps the YouTube response processor on Cloudflare. Its downloaded response script is only a binary transport client. This version sends matching YouTube response bodies and endpoint labels to the Worker; see [the server preview documentation](cloudflare/server/README.md) for data handling, scope, and limits.
+
+The existing showrov-youtube-keys Worker remains the original version, which sends only keys to its validation service. The preview is deployed separately and requires an iPhone test before wider use.
 ## Deploy on Cloudflare
 
 1. In Cloudflare, open **Workers & Pages → Create application → Import a repository** and connect GitHub.

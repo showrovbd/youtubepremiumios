@@ -1,0 +1,54 @@
+// Showrov: the YouTube response processor stays on the Cloudflare Worker.
+(() => {
+    const settings = globalThis.__SHOWROV_LICENSE__;
+    const allowed = new Set(["browse", "next", "player", "search", "reel_watch_sequence", "guide", "get_setting", "get_watch"]);
+    let completed = false;
+    let timer;
+    function finish(value = {}) {
+        if (completed) return;
+        completed = true;
+        if (timer) clearTimeout(timer);
+        $done(value);
+    }
+    function bytes(value) {
+        if (value instanceof Uint8Array) return value;
+        if (value instanceof ArrayBuffer) return new Uint8Array(value);
+        if (ArrayBuffer.isView(value)) return new Uint8Array(value.buffer, value.byteOffset, value.byteLength);
+        return null;
+    }
+    if (!settings || !/^https:\/\/[^/?#]+$/.test(settings.origin) || !/^sr_[A-Za-z0-9_-]{43}$/.test(settings.key)
+        || typeof $request === "undefined" || typeof $response === "undefined") {
+        finish();
+        return;
+    }
+    const match = /^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(?:reel\/|account\/)?([a-z_]+)(?:[/?]|$)/.exec($request.url || "");
+    const input = bytes($response.body);
+    if (!match || !allowed.has(match[1]) || !input || input.byteLength > 2 * 1024 * 1024) {
+        finish();
+        return;
+    }
+    timer = setTimeout(() => finish(), 12000);
+    try {
+        $httpClient.post({
+            url: settings.origin + "/process",
+            headers: {
+                Authorization: "Bearer " + settings.key,
+                "Content-Type": "application/octet-stream",
+                "X-Showrov-Endpoint": match[1]
+            },
+            body: input,
+            "binary-mode": true,
+            timeout: 10
+        }, (error, response, body) => {
+            if (completed) return;
+            const output = bytes(body);
+            if (error || Number(response && (response.status || response.statusCode)) !== 200 || !output) {
+                finish();
+                return;
+            }
+            finish({ body: output });
+        });
+    } catch {
+        finish();
+    }
+})();

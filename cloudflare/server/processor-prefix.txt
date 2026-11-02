@@ -1,0 +1,28 @@
+// Server adapter for the pinned upstream YouTube processor.
+// Upstream attribution and Apache-2.0 license: ../vendor/LICENSE.
+export const ENDPOINTS = new Set(["browse", "next", "player", "search", "reel_watch_sequence", "guide", "get_setting", "get_watch"]);
+
+export async function processYouTube(endpoint, input) {
+    if (!ENDPOINTS.has(endpoint) || !(input instanceof Uint8Array)) {
+        throw new Error("Unsupported processing input.");
+    }
+    const $request = { url: "https://youtubei.googleapis.com/youtubei/v1/" + endpoint, headers: {} };
+    const $response = { body: input, headers: {} };
+    const $argument = JSON.stringify({ lyricLang: "off", captionLang: "off", blockUpload: true, blockImmersive: true, debug: false });
+    const $persistentStore = { read: () => null, write: () => true };
+    const $notification = { post: () => {} };
+    const $httpClient = {
+        get: (_options, callback) => callback("External requests are disabled.", null, ""),
+        post: (_options, callback) => callback("External requests are disabled.", null, "")
+    };
+    const console = { log: () => {} };
+    let completed = false;
+    let resolveCompletion;
+    const completion = new Promise(resolve => { resolveCompletion = resolve; });
+    const $done = result => {
+        if (completed) return;
+        completed = true;
+        const bytes = result?.body ?? result?.bodyBytes;
+        resolveCompletion(bytes instanceof Uint8Array ? bytes : null);
+    };
+    // The upstream source is inserted here at build time, without runtime eval.
