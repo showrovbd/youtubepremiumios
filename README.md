@@ -4,6 +4,17 @@ The author of `youtube-test.conf` is Showrov. That file is the original YouTube-
 
 The Cloudflare project creates a separate key-controlled configuration. It requires an active key to download/update the configuration, download its scripts, and execute each protected script action. No local license cache is used. Invalid keys or validation failures leave normal YouTube traffic unmodified.
 
+## Live deployment
+
+- Key manager: https://showrov-youtube-keys.showrovbd.workers.dev/admin
+- Health check: https://showrov-youtube-keys.showrovbd.workers.dev/health
+- Admin username: `Showrov`. Keep the admin password private.
+
+Create a separate key for each person in the key manager and share the generated configuration URL. The public GitHub baseline remains unprotected.
+
+Deployed on 2026-11-02 from source commit `fa18ed67dac0270b46797384445b3d4a69395636` using the Cloudflare API. The SQLite Durable Object and admin secret are configured. Live checks passed for authentication, protected downloads and updates, validation, and revocation of already-downloaded request and response scripts. An iPhone playback test is still required.
+
+Automatic deployment from GitHub is not connected. Repository changes must be deployed to the Worker before clients receive them. The instructions below can configure deployment through Cloudflare Workers Builds.
 ## Deploy on Cloudflare
 
 1. In Cloudflare, open **Workers & Pages → Create application → Import a repository** and connect GitHub.
