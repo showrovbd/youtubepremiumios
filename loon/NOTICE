@@ -1,0 +1,5 @@
+Showrov YouTube for Loon — adapter by Showrov.
+Includes the Apache-2.0 YouTube response processor from:
+https://github.com/Phuocdz28/Module_IOS/blob/34865755c1aee7ba770c1afa364254d8924cfd85/js/youtube.response.js
+The processor is wrapped by Showrov's license-checking adapter.
+See LICENSE for the retained upstream license and attribution.
