@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Showrov — YouTube keys</title>
+<title>Showrov — App keys</title>
 <style>
 :root{font-family:system-ui,sans-serif;color:#162324;background:#eef3f2}
 body{max-width:840px;margin:0 auto;padding:28px 18px}
 h1{margin-bottom:6px}p{line-height:1.5;color:#465c5d}
 section{background:white;border:1px solid #d6e1df;border-radius:12px;padding:22px;margin:22px 0}
 label{display:block;margin:14px 0 5px;font-weight:600}
-input,textarea,button{box-sizing:border-box;font:inherit;border-radius:7px;padding:12px}
-input,textarea{width:100%;border:1px solid #a4b9b5;background:#fff;color:#162324}
+input,textarea,select,button{box-sizing:border-box;font:inherit;border-radius:7px;padding:12px}
+input,textarea,select{width:100%;border:1px solid #a4b9b5;background:#fff;color:#162324}
 button{cursor:pointer;background:#086b58;color:white;border:0;margin-top:14px;min-height:44px}
 button:disabled{opacity:.55;cursor:default}
 textarea{overflow-wrap:anywhere}
@@ -25,11 +25,13 @@ a{color:#086b58}
 </style>
 </head>
 <body>
-<h1>Showrov YouTube keys</h1>
-<p>Create an access key for each person to paste into Loon.</p>
+<h1>Showrov app keys</h1>
+<p>Choose an app and create a key for its Loon plugin. Each key works only with the selected app.</p>
 <section>
 <h2>Create a key</h2>
 <form id="create">
+<label for="app">App</label>
+<select id="app" name="app"><option value="youtube">YouTube</option><option value="spotify">Spotify</option><option value="picsart">Picsart</option><option value="alight-motion">Alight Motion</option><option value="truecaller">Truecaller</option></select>
 <label for="label">Name or label</label>
 <input id="label" name="label" maxlength="80" required placeholder="For example: Rahim">
 <label for="days">Valid for this many days</label>
@@ -51,6 +53,7 @@ a{color:#086b58}
 </section>
 <footer>Revocation stops future downloads and protected script actions. Already applied settings or buffered playback can persist until the app refreshes. <a href="/licenses">Third-party license</a></footer>
 <script>
+const apps={youtube:"YouTube",spotify:"Spotify",picsart:"Picsart","alight-motion":"Alight Motion",truecaller:"Truecaller"};
 const message=document.querySelector("#message");
 function showMessage(text,error=false){
  message.textContent=text;
@@ -80,7 +83,7 @@ async function refresh(){
   title.textContent=license.label;
   const detail=document.createElement("p");
   const state=license.revokedAt!==null?"Revoked":license.expiresAt<=Date.now()?"Expired":"Active";
-  detail.textContent=state+" · Expires "+new Date(license.expiresAt).toLocaleString();
+  detail.textContent=(apps[license.app||"youtube"]||"Unknown app")+" · "+state+" · Expires "+new Date(license.expiresAt).toLocaleString();
   const button=document.createElement("button");
   button.type="button";
   button.textContent="Revoke";
@@ -100,12 +103,13 @@ document.querySelector("#create").addEventListener("submit",async event=>{
  button.disabled=true;
  try{
   const data=await api("/admin/keys",{
+   app:document.querySelector("#app").value,
    label:document.querySelector("#label").value,
    days:Number(document.querySelector("#days").value)
   });
   document.querySelector("#access-key").value=data.key;
   document.querySelector("#created").hidden=false;
-  showMessage("Access key created.");
+  showMessage((apps[data.license.app]||"App")+" key created. Copy and save it now.");
   await refresh();
  }catch(error){showMessage(error.message,true);}
  finally{button.disabled=false;}

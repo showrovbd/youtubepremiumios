@@ -1,5 +1,9 @@
 const KEY_PATTERN = /^sr_[A-Za-z0-9_-]{43}$/;
 const HASH_PATTERN = /^[a-f0-9]{64}$/;
+export const APPS = Object.freeze({youtube:"YouTube",spotify:"Spotify",picsart:"Picsart","alight-motion":"Alight Motion",truecaller:"Truecaller"});
+function appId(value) {
+    return value === undefined ? "youtube" : typeof value === "string" && Object.hasOwn(APPS,value) ? value : null;
+}
 
 function reply(body, status = 200, type = "application/json", extra = {}) {
     const headers = {
@@ -60,10 +64,12 @@ export class LicenseRegistry {
         const url = new URL(request.url);
         if (request.method === "GET" && url.pathname === "/list") {
             const records = await this.storage.list({ prefix: "license:" });
-            return reply({ licenses: [...records.values()].sort((first, second) => second.createdAt - first.createdAt) });
+            return reply({ licenses: [...records.values()].map(record => ({...record, app:appId(record.app)})).sort((first, second) => second.createdAt - first.createdAt) });
         }
         if (request.method === "POST" && url.pathname === "/create") {
             const input = await request.json();
+            const app = appId(input.app);
+            if (!app) return reply({ error: "Choose a supported app." }, 400);
             const days = input.days;
             if (!Number.isInteger(days) || days < 1 || days > 3650) {
                 return reply({ error: "Days must be between 1 and 3650." }, 400);
@@ -78,7 +84,7 @@ export class LicenseRegistry {
             const identifier = await digest(key);
             const createdAt = Date.now();
             const record = {
-                id: identifier, label, createdAt,
+                id: identifier, label, app, createdAt,
                 expiresAt: createdAt + days * 86400000,
                 revokedAt: null
             };
@@ -86,13 +92,15 @@ export class LicenseRegistry {
             return reply({ key, license: record }, 201);
         }
         if (request.method === "GET" && url.pathname === "/check") {
+            const app = appId(url.searchParams.has("app") ? url.searchParams.get("app") : undefined);
+            if (!app) return reply({ valid: false }, 403);
             const identifier = url.searchParams.get("hash") || "";
             if (!HASH_PATTERN.test(identifier)) return reply({ valid: false }, 403);
             const record = await this.storage.get("license:" + identifier);
-            if (!record || record.revokedAt !== null || record.expiresAt <= Date.now()) {
+            if (!record || appId(record.app) !== app || record.revokedAt !== null || record.expiresAt <= Date.now()) {
                 return reply({ valid: false }, 403);
             }
-            return reply({ valid: true, license: record });
+            return reply({ valid: true, license: {...record, app} });
         }
         if (request.method === "POST" && url.pathname === "/revoke") {
             const { id } = await request.json();
@@ -197,7 +205,7 @@ export function createService({ configTemplate, requestScript, responseScript, a
                         }));
                         const data = await result.json();
                         if (result.ok && data.key) {
-                            data.downloadUrl = url.origin + "/youtube.conf?key=" + encodeURIComponent(data.key);
+                            if (data.license.app === "youtube") data.downloadUrl = url.origin + "/youtube.conf?key=" + encodeURIComponent(data.key);
                         }
                         return reply(data, result.status);
                     }
@@ -211,16 +219,28 @@ export function createService({ configTemplate, requestScript, responseScript, a
                 if (validation ? request.method !== "POST" : !["GET", "HEAD"].includes(request.method)) {
                     return reply({ error: "Method not allowed." }, 405);
                 }
+                let app = "youtube";
+                if (validation) {
+                    const text = await request.text();
+                    if (text.length > 4096) return reply({ valid:false, error:"Request is too large." },400);
+                    if (text.trim()) {
+                        let input;
+                        try { input=JSON.parse(text); } catch { return reply({valid:false,error:"Invalid JSON request."},400); }
+                        if (!input || typeof input !== "object" || Array.isArray(input)) return reply({valid:false,error:"Invalid JSON request."},400);
+                        app=appId(input.app);
+                        if (!app) return reply({valid:false,error:"Choose a supported app."},400);
+                    }
+                }
                 const authorization = request.headers.get("Authorization") || "";
                 const bearer = authorization.startsWith("Bearer ") ? authorization.slice(7) : "";
                 const key = validation ? bearer : (url.searchParams.get("key") || bearer);
                 if (!KEY_PATTERN.test(key)) return reply({ valid: false, error: "An active key is required." }, 403);
-                const checked = await registry.fetch(new Request("https://registry/check?hash=" + await digest(key)));
+                const checked = await registry.fetch(new Request("https://registry/check?hash=" + await digest(key) + "&app=" + encodeURIComponent(app)));
                 const verdict = await checked.json();
                 if (!checked.ok || verdict.valid !== true) {
                     return reply({ valid: false, error: "Key is invalid, expired, or revoked." }, 403);
                 }
-                if (validation) return reply({ valid: true, expiresAt: verdict.license.expiresAt });
+                if (validation) return reply({ valid: true, app:verdict.license.app, expiresAt: verdict.license.expiresAt });
                 let response;
                 if (download) {
                     response = reply(protectedConfiguration(url.origin, key, verdict.license), 200, "text/plain");
