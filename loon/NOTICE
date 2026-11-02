@@ -2,7 +2,9 @@ Showrov YouTube
 Author: Showrov
 Includes YouTube Enhance by Maasea and contributors (Apache-2.0).
 Source: https://github.com/Maasea/sgmodule/tree/2ead6ff5950d7722c4aa6658998904ef78eee531
-Includes Showrov integration and access checks.
+Includes Showrov integration, access checks, and diagnostic modifications.
+URL rules adapted from the original 10in1 configuration:
+https://github.com/Gaucuto/ver2promax/blob/main/10in1
 
 nobleCiphers
 The MIT License (MIT)
