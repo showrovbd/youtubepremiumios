@@ -209,7 +209,7 @@ export async function runServerChecks({ createRemoteService, LicenseRegistry, pr
         method: "POST", headers: processHeaders(active.key)
     }), {})).status, 503);
     assert.deepEqual([...storage.records.keys()].sort(), ["license:" + active.license.id, "license:" + expired.license.id].sort());
-    for (const record of storage.records.values()) assert.deepEqual(Object.keys(record).sort(), ["id", "label", "createdAt", "expiresAt", "revokedAt"].sort());
+    for (const record of storage.records.values()) assert.deepEqual(Object.keys(record).sort(), ["id", "label", "app", "createdAt", "expiresAt", "revokedAt"].sort());
 
     // Independently verify that unknown protobuf fields survive processing.
     const padding = new Uint8Array(64 * 1024).fill(65);
