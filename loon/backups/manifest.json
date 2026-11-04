@@ -129,6 +129,14 @@
       "bytes": 69977,
       "sha256": "3850a8b43881df2af5187c25d46ae8ccd15bab02fc81e2512be6183976b8b8ea",
       "status": "historical-intermittent-playback-reported"
+    },
+    {
+      "app": "spotify",
+      "version": 8,
+      "path": "loon/backups/spotify/Showrov-Spotify-v8.lpxe",
+      "bytes": 136484,
+      "sha256": "44b749f17681b8bed9557f3141c8a138b41a971cfb4d19f94b910c41246bb7b6",
+      "status": "historical-unverified"
     }
   ],
   "lastKnownWorking": {

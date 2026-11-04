@@ -1,5 +1,13 @@
-# Showrov plugins — permanent downloads
-[YouTube](https://raw.githubusercontent.com/showrovbd/youtubepremiumios/loon-preview/loon/apps/Showrov-YouTube.lpxe) · [Spotify](https://raw.githubusercontent.com/showrovbd/youtubepremiumios/loon-preview/loon/apps/Showrov-Spotify.lpxe) · [Picsart](https://raw.githubusercontent.com/showrovbd/youtubepremiumios/loon-preview/loon/apps/Showrov-PicsArt.lpxe) · [Alight Motion](https://raw.githubusercontent.com/showrovbd/youtubepremiumios/loon-preview/loon/apps/Showrov-AlightMotion.lpxe) · [Truecaller](https://raw.githubusercontent.com/showrovbd/youtubepremiumios/loon-preview/loon/apps/Showrov-Truecaller.lpxe)
-One active file per app. Add once, then update this same entry inside Loon. [Update help](../UPDATES.md).
-YouTube v10 is confirmed working; Spotify v8 playback and other app releases still need device testing.
-[Saved versions](../backups/README.md) · [Keys and support](https://t.me/montouch)
+# Choose your Showrov plugins
+
+| Plugin | Install | Manual setup |
+| :-- | :--: | :--: |
+| <img src="https://raw.githubusercontent.com/showrovbd/youtubepremiumios/loon-preview/loon/icons/youtube.jpg" width="28" alt=""> **YouTube** | [Add to Loon](https://www.nsloon.com/openloon/import?plugin=https%3A%2F%2Fraw.githubusercontent.com%2Fshowrovbd%2Fyoutubepremiumios%2Floon-preview%2Floon%2Fapps%2FShowrov-YouTube.lpxe) | [Plugin URL](https://raw.githubusercontent.com/showrovbd/youtubepremiumios/loon-preview/loon/apps/Showrov-YouTube.lpxe) |
+| <img src="https://raw.githubusercontent.com/showrovbd/youtubepremiumios/loon-preview/loon/icons/spotify.jpg" width="28" alt=""> **Spotify** | [Add to Loon](https://www.nsloon.com/openloon/import?plugin=https%3A%2F%2Fraw.githubusercontent.com%2Fshowrovbd%2Fyoutubepremiumios%2Floon-preview%2Floon%2Fapps%2FShowrov-Spotify.lpxe) | [Plugin URL](https://raw.githubusercontent.com/showrovbd/youtubepremiumios/loon-preview/loon/apps/Showrov-Spotify.lpxe) |
+| <img src="https://raw.githubusercontent.com/showrovbd/youtubepremiumios/loon-preview/loon/icons/picsart.jpg" width="28" alt=""> **Picsart** | [Add to Loon](https://www.nsloon.com/openloon/import?plugin=https%3A%2F%2Fraw.githubusercontent.com%2Fshowrovbd%2Fyoutubepremiumios%2Floon-preview%2Floon%2Fapps%2FShowrov-PicsArt.lpxe) | [Plugin URL](https://raw.githubusercontent.com/showrovbd/youtubepremiumios/loon-preview/loon/apps/Showrov-PicsArt.lpxe) |
+| <img src="https://raw.githubusercontent.com/showrovbd/youtubepremiumios/loon-preview/loon/icons/alight-motion.jpg" width="28" alt=""> **Alight Motion** | [Add to Loon](https://www.nsloon.com/openloon/import?plugin=https%3A%2F%2Fraw.githubusercontent.com%2Fshowrovbd%2Fyoutubepremiumios%2Floon-preview%2Floon%2Fapps%2FShowrov-AlightMotion.lpxe) | [Plugin URL](https://raw.githubusercontent.com/showrovbd/youtubepremiumios/loon-preview/loon/apps/Showrov-AlightMotion.lpxe) |
+| <img src="https://raw.githubusercontent.com/showrovbd/youtubepremiumios/loon-preview/loon/icons/truecaller.jpg" width="28" alt=""> **Truecaller** | [Add to Loon](https://www.nsloon.com/openloon/import?plugin=https%3A%2F%2Fraw.githubusercontent.com%2Fshowrovbd%2Fyoutubepremiumios%2Floon-preview%2Floon%2Fapps%2FShowrov-Truecaller.lpxe) | [Plugin URL](https://raw.githubusercontent.com/showrovbd/youtubepremiumios/loon-preview/loon/apps/Showrov-Truecaller.lpxe) |
+
+Tap **Add to Loon** on your iPhone, or copy **Plugin URL** for manual setup. Enter the matching Access Key, save and enable the plugin.
+
+[Step-by-step installation](https://github.com/showrovbd/youtubepremiumios/blob/loon-preview/README.md#getting-started) · [Update guide](https://github.com/showrovbd/youtubepremiumios/blob/loon-preview/loon/UPDATES.md) · [Keys and support](https://t.me/montouch)
