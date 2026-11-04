@@ -1,0 +1,142 @@
+{
+  "archives": [
+    {
+      "app": "alight-motion",
+      "version": 1,
+      "path": "loon/backups/alight-motion/Showrov-AlightMotion-v1.lpxe",
+      "bytes": 39051,
+      "sha256": "2f18934a27651a7999653e189744a7154eeea5f17c5e250d9bbdbdad75070a45",
+      "status": "historical-unverified"
+    },
+    {
+      "app": "alight-motion",
+      "version": 2,
+      "path": "loon/backups/alight-motion/Showrov-AlightMotion-v2.lpxe",
+      "bytes": 40118,
+      "sha256": "df1a9ac4e1f0909b15749d802bf2edfc329bc5577de0ffbe4a82f934aacda864",
+      "status": "historical-unverified"
+    },
+    {
+      "app": "picsart",
+      "version": 1,
+      "path": "loon/backups/picsart/Showrov-PicsArt-v1.lpxe",
+      "bytes": 38878,
+      "sha256": "ce290c5e8baebb9cc548a5ec0c13f066a42fef9936d8e5495e1dc2dab3e3ff18",
+      "status": "historical-unverified"
+    },
+    {
+      "app": "picsart",
+      "version": 2,
+      "path": "loon/backups/picsart/Showrov-PicsArt-v2.lpxe",
+      "bytes": 39921,
+      "sha256": "67cf7fdb3f794adff84d44279aea943334114fad198ecb1f892959bbdc6731b8",
+      "status": "historical-unverified"
+    },
+    {
+      "app": "spotify",
+      "version": 1,
+      "path": "loon/backups/spotify/Showrov-Spotify-v1.lpxe",
+      "bytes": 132923,
+      "sha256": "9583ef670f9154bd70370f6df0772afec4a5cf6f2ad9913866d6b33052b8cc22",
+      "status": "historical-unverified"
+    },
+    {
+      "app": "truecaller",
+      "version": 1,
+      "path": "loon/backups/truecaller/Showrov-Truecaller-v1.lpxe",
+      "bytes": 39578,
+      "sha256": "767112d0902bc38bfca3db32269c9bb46c6edda6fa5096014161e1f022d76385",
+      "status": "historical-unverified"
+    },
+    {
+      "app": "truecaller",
+      "version": 2,
+      "path": "loon/backups/truecaller/Showrov-Truecaller-v2.lpxe",
+      "bytes": 40633,
+      "sha256": "58109ff0a67831eff7ea3293f997aca1f5d1cd0e09b5b6418ee710fa5724f8da",
+      "status": "historical-unverified"
+    },
+    {
+      "app": "spotify",
+      "version": 2,
+      "path": "loon/backups/spotify/Showrov-Spotify-v2-test.lpxe",
+      "bytes": 79391,
+      "sha256": "77f3de820ceae8e2895402633620cb111a85fedfa15ae27a92984371054b8640",
+      "status": "historical-unverified"
+    },
+    {
+      "app": "spotify",
+      "version": 3,
+      "path": "loon/backups/spotify/Showrov-Spotify-v3-test.lpxe",
+      "bytes": 79181,
+      "sha256": "7018ab2eef9850e54df72d7f525a3c8a2b32218d311d2787a25e368e6618b9ff",
+      "status": "historical-unverified"
+    },
+    {
+      "app": "spotify",
+      "version": 4,
+      "path": "loon/backups/spotify/Showrov-Spotify-v4-test.lpxe",
+      "bytes": 69334,
+      "sha256": "aa2bfb54b1b198e01a21da9340505d6027b6a0b35bad9f8b7d343b535baaf0c1",
+      "status": "historical-unverified"
+    },
+    {
+      "app": "spotify",
+      "version": 5,
+      "path": "loon/backups/spotify/Showrov-Spotify-v5-test.lpxe",
+      "bytes": 70324,
+      "sha256": "3c28f82ba02ccb4c234998a2b01cb391c9a85f8936982c8dad7983bc599e4ce5",
+      "status": "historical-unverified"
+    },
+    {
+      "app": "spotify",
+      "version": 6,
+      "path": "loon/backups/spotify/Showrov-Spotify-v6-test.lpxe",
+      "bytes": 70361,
+      "sha256": "92ae4d6d487431ec6592334592e43a338e24302b39c5d358a5fe96c96d366927",
+      "status": "historical-unverified"
+    },
+    {
+      "app": "youtube",
+      "version": 7,
+      "path": "loon/backups/youtube/Showrov-YouTube-v7.lpxe",
+      "bytes": 282284,
+      "sha256": "f0d7191d0215bb2c4d99c093963d67ec3dbd66df35871b1ed4c028a6ad4097d4",
+      "status": "user-confirmed-working"
+    },
+    {
+      "app": "youtube",
+      "version": 9,
+      "path": "loon/backups/youtube/Showrov-YouTube-v9.lpxe",
+      "bytes": 282568,
+      "sha256": "2a52ef0cde5a387a4283385687e2948875b84577dd50ccb4cb8dcd9ee26de9f1",
+      "status": "historical-unverified"
+    },
+    {
+      "app": "youtube",
+      "version": 10,
+      "path": "loon/backups/youtube/Showrov-YouTube-v10.lpxe",
+      "bytes": 282693,
+      "sha256": "f7b1ebf94faca49f0de9f69c43028a4e133636a2c05e73ddec65c43f99da7806",
+      "status": "user-confirmed-working",
+      "confirmationDate": "2026-11-04",
+      "confirmationSource": "User iPhone retest report"
+    }
+  ],
+  "lastKnownWorking": {
+    "youtube": {
+      "app": "youtube",
+      "version": 10,
+      "path": "loon/backups/youtube/Showrov-YouTube-v10.lpxe",
+      "bytes": 282693,
+      "sha256": "f7b1ebf94faca49f0de9f69c43028a4e133636a2c05e73ddec65c43f99da7806",
+      "status": "user-confirmed-working",
+      "confirmationDate": "2026-11-04",
+      "confirmationSource": "User iPhone retest report"
+    },
+    "spotify": null,
+    "picsart": null,
+    "alight-motion": null,
+    "truecaller": null
+  }
+}
