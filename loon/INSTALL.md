@@ -6,4 +6,4 @@ To keep your routing and certificate, update the matching entries in the current
 
 Optional first-time profile: [Open in Loon](https://www.nsloon.com/openloon/import?sub=https%3A%2F%2Fraw.githubusercontent.com%2Fshowrovbd%2Fyoutubepremiumios%2Floon-preview%2Floon%2FShowrov-All.conf) · [Download](Showrov-All.conf). Selecting this profile uses direct connections and system DNS; export the existing profile first. It is not an append-only import.
 
-Use Loon 3.5.3 (1014)+, enter each matching key, and select/trust your own certificate. Enable HTTPS decryption, Rewrite and Script. Keys and certificates are not included. YouTube v10 is confirmed; Spotify v7 seeking and other app releases need device testing. [Support](https://t.me/montouch).
+Use Loon 3.5.3 (1014)+, enter each matching key, and select/trust your own certificate. Enable HTTPS decryption, Rewrite and Script. Keys and certificates are not included. YouTube v10 is confirmed; Spotify v8 playback and other app releases need device testing. [Support](https://t.me/montouch).

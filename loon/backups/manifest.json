@@ -121,6 +121,14 @@
       "status": "user-confirmed-working",
       "confirmationDate": "2026-11-04",
       "confirmationSource": "User iPhone retest report"
+    },
+    {
+      "app": "spotify",
+      "version": 7,
+      "path": "loon/backups/spotify/Showrov-Spotify-v7.lpxe",
+      "bytes": 69977,
+      "sha256": "3850a8b43881df2af5187c25d46ae8ccd15bab02fc81e2512be6183976b8b8ea",
+      "status": "historical-intermittent-playback-reported"
     }
   ],
   "lastKnownWorking": {

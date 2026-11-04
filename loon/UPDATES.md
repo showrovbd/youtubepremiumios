@@ -14,8 +14,8 @@ For a first installation, add each wanted plugin once and enter its matching key
 
 After this one-time setup, use Loon’s Update action on the same entry whenever a release is published. Its filename and URL stay the same during testing, improvements and rollbacks. Confirm the version in the plugin description after updating.
 
-We save every confirmed working version before modifying it. The revised package replaces the active file; a rollback restores the saved bytes to that same URL. YouTube v10 is confirmed working. Spotify v7 seeking and the other app releases still need device tests; Spotify ads may appear during testing.
+We save every confirmed working version before modifying it. The revised package replaces the active file; a rollback restores the saved bytes to that same URL. YouTube v10 is confirmed working. Spotify v8 playback and the other app releases still need device tests; Spotify ads may appear during testing.
 
 Keep the current routing and certificate by changing only the existing plugin URLs, or use the [plugin entries](Showrov-Plugin-Entries.txt). The optional [all-five profile](INSTALL.md) uses direct connections and system DNS. [Keys and support](https://t.me/montouch).
 
-Current Spotify test: after Update shows Version 7, restart Spotify and play three songs for at least 30 seconds each without seeking. Then try Previous and seeking. Report any automatic skips or disabled controls; this is not yet a confirmed playback fix.
+Current Spotify test: after Update shows Version 8, keep Loon and the Spotify plugin enabled, then sign out of Spotify and sign in again. Use Normal audio quality; avoid Very High. This version restores the original 10in1 Spotify implementation. Play three songs for at least 30 seconds each, then test Previous and seeking. Loon playback remains unverified.
