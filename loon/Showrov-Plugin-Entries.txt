@@ -1,0 +1,7 @@
+# Merge these entries into your current configuration, under its existing [Plugin] section.
+[Plugin]
+https://raw.githubusercontent.com/showrovbd/youtubepremiumios/b7110b2f82ab09e7dbd65949cab2787807f9a14c/loon/Showrov-YouTube.lpxe,tag=Showrov-YouTube-v10,enable=true
+https://raw.githubusercontent.com/showrovbd/youtubepremiumios/ec6e9977381a73ec1bb2341ffdb36c19356e87b5/loon/apps/Showrov-Spotify-v5-test.lpxe,tag=Showrov-Spotify-v5-test,enable=true
+https://raw.githubusercontent.com/showrovbd/youtubepremiumios/ec6e9977381a73ec1bb2341ffdb36c19356e87b5/loon/apps/Showrov-PicsArt.lpxe,tag=Showrov-PicsArt-v3,enable=true
+https://raw.githubusercontent.com/showrovbd/youtubepremiumios/ec6e9977381a73ec1bb2341ffdb36c19356e87b5/loon/apps/Showrov-AlightMotion.lpxe,tag=Showrov-AlightMotion-v3,enable=true
+https://raw.githubusercontent.com/showrovbd/youtubepremiumios/ec6e9977381a73ec1bb2341ffdb36c19356e87b5/loon/apps/Showrov-Truecaller.lpxe,tag=Showrov-Truecaller-v3,enable=true
