@@ -2,6 +2,8 @@
 
 V5 still advanced to the next track when seeking. V6 aligns the newer playback-license setting with the existing one; it needs an iPhone test.
 
+Already installed? [Update the existing plugin in Loon](Spotify-updates.md). The permanent download now serves this same v6 package.
+
 1. Disable every older Spotify plugin copy, import [v6](Showrov-Spotify-v6-test.lpxe), and enter the same Spotify key.
 2. Keep Normal audio quality and restart Spotify. If old account settings persist, sign out/in once.
 3. Confirm version 6 at `https://showrov-youtube-keys.showrovbd.workers.dev/health?loonapp=spotify&rev=6`.
