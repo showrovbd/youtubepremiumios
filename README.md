@@ -1,5 +1,5 @@
 # Showrov Loon plugins
-[YouTube Update 10](loon/Showrov-YouTube.lpxe) · [Spotify v4 seeking comparison](loon/apps/Showrov-Spotify-v4-test.lpxe)
-[Picsart v2](loon/apps/Showrov-PicsArt.lpxe) · [Alight Motion v2](loon/apps/Showrov-AlightMotion.lpxe) · [Truecaller v2](loon/apps/Showrov-Truecaller.lpxe)
-Use matching keys and disable old copies. Spotify v4 is a comparison test; ads may appear and seeking is not yet verified.
+[YouTube Update 10](loon/Showrov-YouTube.lpxe) · [Spotify v5 test](loon/apps/Showrov-Spotify-v5-test.lpxe)
+[Picsart v3](loon/apps/Showrov-PicsArt.lpxe) · [Alight Motion v3](loon/apps/Showrov-AlightMotion.lpxe) · [Truecaller v3](loon/apps/Showrov-Truecaller.lpxe)
+New app access notices default to manual only. Use matching keys and disable older copies. Spotify seeking is unverified; ads may appear.
 Keys and support: [Showrov](https://t.me/montouch). Third-party licenses are included in the packages.
