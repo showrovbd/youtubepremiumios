@@ -6,7 +6,7 @@
 
 Your apps. Your preferences. One place to get started.
 
-[Installation](#getting-started) · [Plugins](#4-choose-your-plugins) · [Settings](#make-it-yours) · [Downloads](#youtube-downloads) · [Contact Showrov](https://t.me/montouch)
+[Installation](#getting-started) · [Plugins](#4-choose-your-plugins) · [Settings](#make-it-yours) · [Contact Showrov](https://t.me/montouch)
 
 </div>
 
@@ -94,14 +94,6 @@ Open a plugin’s settings in Loon to adjust its available options.
 To use the Premium header, turn on **YouTube Premium Logo**, save, then fully close and reopen YouTube. Turn it off to use your account’s default logo.
 
 Restart the target app after changing appearance or layout options. Navigation options apply where the app provides the corresponding entries.
-
-## YouTube downloads
-
-Export audio as **M4A** with a choice of **64–320 kbps**, or choose an available **MP4 video resolution**. Save to **Files**, or export compatible videos to **Photos**.
-
-This optional companion is available as a **preview** and requires a one-time setup with **a-Shell and Shortcuts**.
-
-**[Set up YouTube downloads](https://github.com/showrovbd/youtubepremiumios/blob/loon-preview/loon/companions/youtube-download/README.md)**
 
 ## Stay up to date
 
