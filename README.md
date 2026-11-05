@@ -16,11 +16,15 @@ Your apps. Your preferences. One place to get started.
 
 ### 1. Install Loon
 
-Download **[Loon from the App Store](https://apps.apple.com/app/loon/id1373567447)**. Loon is a paid app; its purchase is separate from your plugin access key. Use Loon **3.5.3 (1014) or later**.
+> [!IMPORTANT]
+> **Loon is a paid app. You need it installed before using these plugins.**
+>
+> **For Loon installation access, [Contact Showrov](https://t.me/montouch).**
 
-Need help getting the app? **[Contact Showrov on Telegram: @montouch](https://t.me/montouch)** for installation access and guidance.
+You can also [purchase Loon directly from the App Store](https://apps.apple.com/app/loon/id1373567447). Plugin access keys are separate from the app purchase.
 
-Open Loon and allow it to add a VPN configuration when iOS asks.
+1. Install **Loon 3.5.3 (1014) or later**.
+2. Open Loon and allow it to add a VPN configuration when iOS asks.
 
 ### 2. Install and trust your certificate
 
@@ -66,7 +70,7 @@ Add each plugin once. Keep only one enabled copy of each plugin.
 3. Save the settings and enable the plugin.
 4. Keep Loon connected, then close and reopen the target app.
 
-Each plugin uses its own key. For activation, renewal or setup assistance, **[message @montouch](https://t.me/montouch)**.
+Each plugin uses its own key. For activation, renewal or setup assistance, **[Contact Showrov](https://t.me/montouch)**.
 
 ### 6. Finish Spotify setup
 
@@ -99,7 +103,7 @@ In Loon’s plugin list, use **Update** on the existing entry. Your plugin URL s
 
 First check that Loon is connected, your plugin is enabled, your key is valid, and **Script**, **Rewrite** and **MitM** are on. Confirm that the Loon certificate is installed and fully trusted.
 
-For help, send the app name, plugin version and a short description of the issue to **[Showrov — @montouch](https://t.me/montouch)**. Keep passwords, access keys and certificate files out of public issues.
+For help, **[Contact Showrov](https://t.me/montouch)** with the app name, plugin version and a short description of the issue. Keep passwords, access keys and certificate files out of public issues.
 
 ---
 
