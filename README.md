@@ -17,11 +17,13 @@ Your apps. Your preferences. One place to get started.
 ### 1. Install Loon
 
 > [!IMPORTANT]
-> **Loon is a paid app. You need it installed before using these plugins.**
+> **Apple ID available with Loon already purchased**
 >
-> **For Loon installation access, [Contact Showrov](https://t.me/montouch).**
+> Loon is a paid app and is required to use these plugins.
+>
+> **[Contact Showrov](https://t.me/montouch)** to request the Apple ID and installation instructions.
 
-You can also [purchase Loon directly from the App Store](https://apps.apple.com/app/loon/id1373567447). Plugin access keys are separate from the app purchase.
+You can also [purchase Loon directly from the App Store](https://apps.apple.com/app/loon/id1373567447).
 
 1. Install **Loon 3.5.3 (1014) or later**.
 2. Open Loon and allow it to add a VPN configuration when iOS asks.
@@ -34,7 +36,7 @@ You can also [purchase Loon directly from the App Store](https://apps.apple.com/
 4. Go to **Settings → General → About → Certificate Trust Settings** and enable **full trust** for the certificate you just installed.
 5. Return to Loon and select that certificate for MitM.
 
-Create and use your own certificate. Keep the certificate and its private key private.
+Create and use your own certificate. Keep its files private.
 
 ### 3. Enable the required settings
 
@@ -63,14 +65,11 @@ Open this page on your iPhone and tap **Add to Loon**, then confirm the import. 
 
 Add each plugin once. Keep only one enabled copy of each plugin.
 
-### 5. Activate your access
+### 5. Enable your plugins
 
-1. Open the imported plugin’s settings.
-2. Paste the matching key into **Access Key**.
-3. Save the settings and enable the plugin.
-4. Keep Loon connected, then close and reopen the target app.
-
-Each plugin uses its own key. For activation, renewal or setup assistance, **[Contact Showrov](https://t.me/montouch)**.
+1. Open the imported plugin and follow the setup instructions in its description.
+2. Save the settings and enable the plugin.
+3. Keep Loon connected, then close and reopen the target app.
 
 ### 6. Finish Spotify setup
 
@@ -82,9 +81,6 @@ Open a plugin’s settings in Loon to adjust its available options.
 
 | Option | What it does |
 | :-- | :-- |
-| **Access Notifications** | Enables access-key notices. Turn it off to mute all access notices. |
-| **When to Notify → Status changes** | Reports a changed access result once. This is YouTube’s default. |
-| **When to Notify → Manual only** | Stops automatic notices. Run the plugin’s Access Check script when you want a result. |
 | **YouTube → Hide Shorts Tab** | Hides the Shorts navigation entry. Default: **Off**. |
 | **YouTube → Hide Create / Upload** | Hides the Create/upload navigation entry. Default: **On**. |
 | **YouTube → Hide Immersive Music Tab** | Hides the immersive Music navigation entry. Default: **On**. |
@@ -97,19 +93,19 @@ Restart the target app after changing appearance or layout options. Navigation o
 
 ## Stay up to date
 
-In Loon’s plugin list, use **Update** on the existing entry. Your plugin URL stays the same, so you do not need to add another copy. Review the plugin description after updating and keep your access key saved.
+In Loon’s plugin list, use **Update** on the existing entry. Your plugin URL stays the same, so you do not need to add another copy. Review the plugin description after updating for the latest setup instructions.
 
 ## Need a hand?
 
-First check that Loon is connected, your plugin is enabled, your key is valid, and **Script**, **Rewrite** and **MitM** are on. Confirm that the Loon certificate is installed and fully trusted.
+First check that Loon is connected, your plugin is enabled, and **Script**, **Rewrite** and **MitM** are on. Confirm that the Loon certificate is installed and fully trusted.
 
-For help, **[Contact Showrov](https://t.me/montouch)** with the app name, plugin version and a short description of the issue. Keep passwords, access keys and certificate files out of public issues.
+For help, **[Contact Showrov](https://t.me/montouch)** with the app name, plugin version and a short description of the issue. Keep personal information and certificate files out of public issues.
 
 ---
 
 <div align="center">
 
-**Setup · Access · Renewals · Support**
+**Setup · Updates · Support**
 
 [Contact Showrov](https://t.me/montouch)
 
