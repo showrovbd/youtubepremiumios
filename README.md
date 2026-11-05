@@ -84,9 +84,12 @@ Open a plugin’s settings in Loon to adjust its available options.
 | **YouTube → Hide Shorts Tab** | Hides the Shorts navigation entry. Default: **Off**. |
 | **YouTube → Hide Create / Upload** | Hides the Create/upload navigation entry. Default: **On**. |
 | **YouTube → Hide Immersive Music Tab** | Hides the immersive Music navigation entry. Default: **On**. |
+| **YouTube → YouTube Premium Logo** | Shows the Premium wordmark in supported headers. Default: **Off**. Changes appearance only. |
 | **Spotify → Album and Artist Layout** | Uses the tablet layout for album and artist pages. Default: **On**. |
 
-Restart the target app after changing layout options. Navigation options apply where the app provides the corresponding entries.
+To use the Premium header, turn on **YouTube Premium Logo**, save, then fully close and reopen YouTube. Turn it off to use your account’s default logo.
+
+Restart the target app after changing appearance or layout options. Navigation options apply where the app provides the corresponding entries.
 
 ## Stay up to date
 
