@@ -145,6 +145,17 @@
       "bytes": 282496,
       "sha256": "405c733276b3766c5290a0d583372d4be3caa1af31202f122a21ea69f8d14287",
       "status": "historical-unverified"
+    },
+    {
+      "app": "youtube",
+      "version": 12,
+      "path": "loon/backups/youtube/Showrov-YouTube-v12.lpxe",
+      "bytes": 286645,
+      "sha256": "e990be727841c3de427238ed20f974334302e876bf2915e07f1d91d70bce655b",
+      "status": "header-logo-confirmed",
+      "confirmedFeatures": [
+        "premium-header-logo"
+      ]
     }
   ],
   "lastKnownWorking": {
