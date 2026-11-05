@@ -1,0 +1,31 @@
+{
+  "name": "Showrov Download",
+  "version": "1.0.0-preview.1",
+  "status": "preview-awaiting-iphone-test",
+  "file": "Showrov-Download.pyz",
+  "bytes": 5302,
+  "sha256": "5cbe98c4963b90c054e7764d6b40078cf31f56c2eb683595cc9fe925aed8d7ee",
+  "requires": [
+    "a-Shell with Python 3.10+",
+    "yt-dlp",
+    "yt-dlp-ejs",
+    "yt-dlp-apple-webkit-jsi",
+    "certifi",
+    "FFmpeg",
+    "FFprobe"
+  ],
+  "audio": {
+    "container": "m4a",
+    "codec": "aac",
+    "targetBitratesKbps": [
+      64,
+      96,
+      128,
+      192,
+      256,
+      320
+    ]
+  },
+  "video": "Available H.264/AAC MP4 resolutions; no upscaling",
+  "iphoneVerified": false
+}
