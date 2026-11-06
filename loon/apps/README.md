@@ -10,4 +10,4 @@
 
 Tap **Add to Loon** on your iPhone, or copy **Plugin URL** for manual setup. Open the imported plugin and follow its setup instructions, then save and enable it.
 
-[Step-by-step installation](https://github.com/showrovbd/youtubepremiumios/blob/loon-preview/README.md#getting-started) · [Update guide](https://github.com/showrovbd/youtubepremiumios/blob/loon-preview/loon/UPDATES.md) · [Contact Showrov](https://t.me/montouch)
+[YouTube settings guide](YouTube.md) · [Step-by-step installation](https://github.com/showrovbd/youtubepremiumios/blob/loon-preview/README.md#getting-started) · [Update guide](https://github.com/showrovbd/youtubepremiumios/blob/loon-preview/loon/UPDATES.md) · [Contact Showrov](https://t.me/montouch)
