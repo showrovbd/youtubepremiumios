@@ -79,7 +79,7 @@ After installing or updating the Spotify plugin, **keep Loon and the plugin enab
 
 Open a plugin’s settings in Loon to adjust its available options.
 
-**[YouTube settings guide](https://github.com/showrovbd/youtubepremiumios/blob/loon-preview/loon/apps/YouTube.md)** — viewing presets, player controls, captions, feed filters, sharing and more.
+**[YouTube settings guide](https://github.com/showrovbd/youtubepremiumios/blob/loon-preview/loon/apps/YouTube.md)** — player controls, captions, feed filters, sharing and more.
 
 | Option | What it does |
 | :-- | :-- |
