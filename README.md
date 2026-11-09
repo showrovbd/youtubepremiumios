@@ -21,7 +21,9 @@ Your apps. Your preferences. One place to get started.
 >
 > Loon is a paid app and is required to use these plugins.
 >
-> **[Contact Showrov](https://t.me/montouch)** to request the Apple ID and installation instructions.
+> **[Get the shared Apple ID for Loon](https://showrov-apple-id.showrovbd.workers.dev/)** — open the sharing page to copy the account details and follow the App Store installation guide. Available to everyone.
+>
+> Need help? **[Contact Showrov](https://t.me/montouch)**.
 
 You can also [purchase Loon directly from the App Store](https://apps.apple.com/app/loon/id1373567447).
 
