@@ -156,18 +156,28 @@
       "confirmedFeatures": [
         "premium-header-logo"
       ]
+    },
+    {
+      "app": "youtube",
+      "version": 13,
+      "path": "loon/backups/youtube/Showrov-YouTube-v13.lpxe",
+      "bytes": 726547,
+      "sha256": "ff0d8374b4a52e8b98e5af9e74b8797458777acf90fdace0a0281ac0afbe5e55",
+      "status": "user-confirmed-working",
+      "confirmationDate": "2026-11-09",
+      "confirmationSource": "User iPhone report"
     }
   ],
   "lastKnownWorking": {
     "youtube": {
       "app": "youtube",
-      "version": 10,
-      "path": "loon/backups/youtube/Showrov-YouTube-v10.lpxe",
-      "bytes": 282693,
-      "sha256": "f7b1ebf94faca49f0de9f69c43028a4e133636a2c05e73ddec65c43f99da7806",
+      "version": 13,
+      "path": "loon/backups/youtube/Showrov-YouTube-v13.lpxe",
+      "bytes": 726547,
+      "sha256": "ff0d8374b4a52e8b98e5af9e74b8797458777acf90fdace0a0281ac0afbe5e55",
       "status": "user-confirmed-working",
-      "confirmationDate": "2026-11-04",
-      "confirmationSource": "User iPhone retest report"
+      "confirmationDate": "2026-11-09",
+      "confirmationSource": "User iPhone report"
     },
     "spotify": null,
     "picsart": null,
