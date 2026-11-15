@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "apps": {
+    "youtube": {
+      "version": 15,
+      "file": "Showrov-YouTube.lpxe"
+    },
+    "spotify": {
+      "version": 10,
+      "file": "Showrov-Spotify.lpxe"
+    },
+    "picsart": {
+      "version": 4,
+      "file": "Showrov-PicsArt.lpxe"
+    },
+    "alight-motion": {
+      "version": 4,
+      "file": "Showrov-AlightMotion.lpxe"
+    },
+    "truecaller": {
+      "version": 4,
+      "file": "Showrov-Truecaller.lpxe"
+    }
+  }
+}
